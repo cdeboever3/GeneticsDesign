@@ -1,0 +1,15 @@
+Package: GeneticsDesign
+Title: Functions for designing genetics studies
+Version: 0.1.0
+Date: 2006-03-24
+Author: Gregory Warnes <warnes@bst.rochester.edu>
+	David Duffy <davidD@qumr.edu.au>,	
+	Michael Man <michael.man@pfizer.com>
+	Weiliang Qiu <stwxq@channing.harvard.edu>
+	Ross Lazarus <ross.lazarus@channing.harvard.edu>
+Maintainer: Weiliang Qiu <stwxq@channing.harvard.edu>
+Depends:  combinat, gdata, mvtnorm
+Description: This package contains functions useful for designing genetics
+  studies, including power and sample-size calculations.
+biocViews: Genetics
+License: GPL
