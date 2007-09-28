@@ -1,3 +1,4 @@
+importFrom(gtools, binsearch)
 export(
        "gregorius",
        "power.casectrl",
