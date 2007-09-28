@@ -29,6 +29,7 @@ power.genotype.conti <- function(N, Rep=2000, alpha=.05, ...){
   retval <- list()
   retval$power <- mean(pval<=alpha)
   retval$ci    <- ci.binom(pval<=alpha)
+  rownames(retval$ci) <- "power"
   retval$call  <- match.call()
   class(retval) <- "power.genoytpe.conti"
   retval
@@ -44,8 +45,7 @@ print.power.genoytpe.conti <- function(x, ...)
     cat("\n")
     cat("Estimated power:", x$power, "\n")
     cat("\n")
-    print(x$power)
-    print("Simulation confidence region for estimated power:\n")
+    cat("Simulation confidence region for estimated power:\n")
     cat("\n")
     print(x$ci)
   }
