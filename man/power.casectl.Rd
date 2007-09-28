@@ -15,8 +15,8 @@ power.casectrl(N, gamma = 4.5, p = 0.15, kp = 0.1, alpha = 0.05, fc = 0.5,
   \item{gamma}{Relative risk in multiplicative model.  Not used in Dominant 
 	or Recessive model.}
   \item{p}{frequency of A (protective) allele}
-  \item{kp}{ significance level}
-  \item{alpha}{ prevalence of disease }
+  \item{kp}{ prevalence of disease }
+  \item{alpha}{ significance level}
   \item{fc}{ fraction of cases }
   \item{minh}{ mode of inheritance, one of  }
 }
