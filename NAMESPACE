@@ -1,7 +1,10 @@
 importFrom(gtools, binsearch)
+importFrom(gmodels, ci.binom)
 export(
        "gregorius",
        "power.casectrl",
+       "power.genotype.conti",
+       "simu.genotype.conti",
        "GPC",
        "GPC.default"
 )

@@ -8,7 +8,7 @@ Author: Gregory Warnes <warnes@bst.rochester.edu>
 	Weiliang Qiu <stwxq@channing.harvard.edu>
 	Ross Lazarus <ross.lazarus@channing.harvard.edu>
 Maintainer: Weiliang Qiu <stwxq@channing.harvard.edu>
-Depends:  combinat, gdata, gtools (>= 2.4.0), mvtnorm
+Depends:  combinat, gdata, gmodels, gtools (>= 2.4.0), mvtnorm
 Description: This package contains functions useful for designing genetics
   studies, including power and sample-size calculations.
 biocViews: Genetics
