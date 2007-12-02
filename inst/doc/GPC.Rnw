@@ -133,7 +133,7 @@ assume that $\mathbf{D}>0$}.
 
 $\mathbf{D}$ can also be rewritten as
 \begin{equation*}
-\mathbf{D}=Pr(B|A)Pr(A)-Pr(A)Pr(B)=\left[Pr(B|A)-Pr(A)\right]Pr(A).
+\mathbf{D}=Pr(B|A)Pr(A)-Pr(A)Pr(B)=\left[Pr(B|A)-Pr(B)\right]Pr(A).
 \end{equation*}
 Hence $\mathbf{D}>0$ is equivalent to $Pr(B|A)>Pr(A)$ which
 indicates positive association between minor allele $A$ in disease
@@ -277,7 +277,7 @@ n_{0c}=n_{cases}Pr(bb|D).
 The counts for controls
 \begin{equation*}
 n_{2n}=n_{controls}Pr(BB|\bar{D}),\quad
-n1n=n_{controls}Pr(Bb|\bar{D}),\quad
+n_{1n}=n_{controls}Pr(Bb|\bar{D}),\quad
 n_{0n}=n_{controls}Pr(bb|\bar{D}).
 \end{equation*}
 
@@ -311,7 +311,12 @@ U=\sum_{i=1}^{3}x_i\left(\frac{S}{N}r_i-\frac{R}{N}s_i\right),
 \end{equation*}
 where
 \begin{equation*}
-R=n_{0c}+n_{1c}+n_{2c}, S=n_{0n}+n_{1n}+n_{2n}, N=R+S.
+\begin{aligned}
+R=&n_{0c}+n_{1c}+n_{2c}, S=n_{0n}+n_{1n}+n_{2n}, N=R+S\\.
+x_1=&2,\; x_2=1,\; x_3=0,\\
+r_1=&n_{0c},\; r_2=n_{1c},\; r_3=n_{2c},\\
+s_1=&n_{0n},\; s_2=n_{1n},\; s_3=n_{2n}.
+\end{aligned}
 \end{equation*}
 
 We have
@@ -320,7 +325,7 @@ V=\widehat{Var}(U)=\frac{RS}{N^3}\left[N\sum_{i=1}^{3}x_i^2n_i-\left(\sum_{i=1}^
 n_i\right)^2\right].
 \end{equation*}
 
-The Linear Trend Test Statistic
+The Linear Trend Test Statistic\footnote{http://linkage.rockefeller.edu/pawe3d/help/Linear-trend-test-ncp.html}
 \begin{equation*}
 Z_T^2=\left(\frac{U}{\sqrt{V}}\right)^2
 \end{equation*}
