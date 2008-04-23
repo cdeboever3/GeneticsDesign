@@ -2,11 +2,11 @@
 #
 # Purcell's Power estimation method
 # (http://pngu.mgh.harvard.edu/~purcell/gpc/cc2.html)
-
+#
 # Linear Tread Test
 # http://linkage.rockefeller.edu/pawe3d/help/Linear-trend-test-ncp.html
-
-
+#
+#
 # Given
 # pA -- High risk allele frequency (A)
 # pD -- disease prevalence
@@ -20,21 +20,24 @@
 GPC.default<-function(pA, pD, RRAa, RRAA, Dprime, pB, 
                    nCase=500, ratio=1, alpha=0.05, quiet=FALSE)
 {
-  if(!(pA>0 && pA<1) || !(pB>0 && pB<1) || !(Dprime>=0 && Dprime<=1)
-     || !(pD>0 && pD<1) || !(RRAa>1) || !(RRAA>1) ||
-     !(nCase>1) || !(ratio>0) || !(alpha>0 && alpha<0.5))
-  { cat("Some arguments are out of bounds!\n") 
-    cat("0<pA<1\n") 
-    cat("0<pD<1\n") 
-    cat("1<RRAa\n") 
-    cat("1<RRAA\n") 
-    cat("0<=Dprime<=1\n") 
-    cat("0<pB<1\n") 
-    cat("1<nCase\n") 
-    cat("0<ratio\n") 
-    cat("0.05<alpha<0.5\n") 
-    stop("Program ends due to input errors!\n")
-  }
+  if(!(pA>0 && pA<1))
+    stop("Invalid value for pA, should fulfill 0<pA<1")
+  if(!(pB>0 && pB<1))
+    stop("Invalid value for pB, should fulfill 0<pB<1")
+  if(!(pD>0 && pD<1))
+    stop("Invalid value for pD, should fulfill 0<pD<1") 
+  if(!(Dprime>=0 && Dprime<=1))
+    stop("Invalid value for Dprime, should fulfill 0<=Dprime<=1")
+  if(!(RRAa>1))
+    stop("Invalid value for RRAa, should fulfill RRAa>1")
+  if(!(RRAA>1))
+    stop("Invalid value for RRAA, should fulfill RRAA>1")
+  if(!(nCase>1))
+    stop("Invalid value for nCase, should be > 1")
+  if(!(ratio>0))
+    stop("Invalid value for ratio, should be > 0")
+  if(!(alpha>0 && alpha<0.5))
+    stop("Invalid value for alpha, should fulfill 0<alpha<0.5")
   # get penetrances Pr(D|aa), Pr(D|Aa), Pr(D|AA)
   pa<-1-pA
   pb<-1-pB
@@ -198,21 +201,24 @@ GPC.default<-function(pA, pD, RRAa, RRAA, Dprime, pB,
 GPC<-function(pA, pD, RRAa, RRAA, r2, pB, 
                    nCase=500, ratio=1, alpha=0.05, quiet=FALSE)
 {
-  if(!(pA>0 && pA<1) || !(pB>0 && pB<1) || !(r2>=0 && r2<=1)
-     || !(pD>0 && pD<1) || !(RRAa>1) || !(RRAA>1) ||
-     !(nCase>1) || !(ratio>0) || !(alpha>0 && alpha<0.5))
-  { cat("Some arguments are out of bounds!\n") 
-    cat("0<pA<1\n") 
-    cat("0<pD<1\n") 
-    cat("1<RRAa\n") 
-    cat("1<RRAA\n") 
-    cat("0<=r2<=1\n") 
-    cat("0<pB<1\n") 
-    cat("1<nCase\n") 
-    cat("0<ratio\n") 
-    cat("0.05<alpha<0.5\n") 
-    stop("Program ends due to input errors!\n")
-  }
+  if(!(pA>0 && pA<1))
+    stop("Invalid value for pA, should fulfill 0<pA<1")
+  if(!(pB>0 && pB<1))
+    stop("Invalid value for pB, should fulfill 0<pB<1")
+  if(!(pD>0 && pD<1))
+    stop("Invalid value for pD, should fulfill 0<pD<1") 
+  if(!(RRAa>1))
+    stop("Invalid value for RRAa, should fulfill RRAa>1")
+  if(!(RRAA>1))
+    stop("Invalid value for RRAA, should fulfill RRAA>1")
+  if(!(nCase>1))
+    stop("Invalid value for nCase, should be > 1")
+  if(!(ratio>0))
+    stop("Invalid value for ratio, should be > 0")
+  if(!(alpha>0 && alpha<0.5))
+    stop("Invalid value for alpha, should fulfill 0<alpha<0.5")
+  if(!(r2>=0 && r2<=1))
+    stop("Invalid value for r2, should fulfill 0<=r2<=1") 
 
   # estimate Dprime based on r2, pA, pB
   Dprime<-Dprime.fun2(r2, pA, pB)

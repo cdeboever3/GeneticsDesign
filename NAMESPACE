@@ -5,6 +5,8 @@ export(
        "power.casectrl",
        "power.genotype.conti",
        "simu.genotype.conti",
+       "GeneticPower.Quantitative.Factor",
+       "GeneticPower.Quantitative.Numeric",
        "GPC",
        "GPC.default"
 )

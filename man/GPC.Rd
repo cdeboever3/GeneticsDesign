@@ -78,10 +78,14 @@
   \emph{Statistics in Human Genetics.}
   Arnold Applications of Statistics.
 }
-\author{Weiliang Qiu \email{stwxq@channing.harvard.edu}, Ross Lazarus \email{ross.lazarus@channing.harvard.edu}}
+\author{
+  Weiliang Qiu \email{stwxq@channing.harvard.edu},
+  Ross Lazarus \email{ross.lazarus@channing.harvard.edu}
+}
 \examples{
   res1<-GPC(pA=0.05, pD=0.1, RRAa=1.414, RRAA=2, r2=0.9, pB=0.06, 
                    nCase=500, ratio=1, alpha=0.05, quiet=FALSE)
+
   res2<-GPC.default(pA=0.05, pD=0.1, RRAa=1.414, RRAA=2, Dprime=0.9, pB=0.06, 
                    nCase=500, ratio=1, alpha=0.05, quiet=FALSE)
 }

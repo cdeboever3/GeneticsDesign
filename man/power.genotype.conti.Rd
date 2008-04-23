@@ -3,7 +3,8 @@
 \alias{simu.genotype.conti}
 \title{power for genetic studies using baseline measure}
 \description{
-  Estimate power for genetice studies using baseline measurements via simulation.
+  Estimate power for genetice studies using baseline measurements via
+  simulation. 
 }
 \usage{
 power.genotype.conti(N, Rep = 2000, alpha = 0.05, ...)
@@ -67,7 +68,6 @@ simu.genotype.conti(N, p=0.15, pi=0, me1=50, me2=me1, delta=-5,
   # Show details for small simulation study
   power.genotype.conti(N=10, verbose=TRUE)
 }
-
 \dontshow{
   # test code
   set.seed(100)
