@@ -7,7 +7,7 @@ Author: Gregory Warnes <warnes@bst.rochester.edu>
 	Michael Man <michael.man@pfizer.com>
 	Weiliang Qiu <stwxq@channing.harvard.edu>
 	Ross Lazarus <ross.lazarus@channing.harvard.edu>
-Maintainer: Gregory Warnes <gregory.warnes@rochester.edu>
+Maintainer: The R Genetics Project <r-genetics-talk@lists.sourceforge.net>
 Depends:  combinat, gdata, gmodels, gtools (>= 2.4.0), mvtnorm
 Description: This package contains functions useful for designing genetics
   studies, including power and sample-size calculations.
