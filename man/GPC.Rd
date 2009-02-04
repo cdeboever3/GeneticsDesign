@@ -7,9 +7,9 @@
 }
 \usage{
   GPC(pA, pD, RRAa, RRAA, r2, pB, 
-                   nCase=500, ratio=1, alpha=0.05, quiet=FALSE)
+              nCase=500, ratio=1, alpha=0.05, quiet=FALSE)
   GPC.default(pA, pD, RRAa, RRAA, Dprime, pB, 
-                   nCase=500, ratio=1, alpha=0.05, quiet=FALSE)
+              nCase=500, ratio=1, alpha=0.05, quiet=FALSE)
 }
 \arguments{
   \item{pA}{High risk allele frequency (\code{A}).}
@@ -20,7 +20,7 @@
 
   \item{RRAA}{Genotype relative risk (\code{AA}) = \code{RR(AA|aa)=Pr(D|AA)/Pr(D|aa)}.}
 
-  \item{r2}{LD measure. Assume that \code{D>0}.}
+  \item{r2}{LD measure. Assume that \code{D > 0}.}
 
   \item{Dprime}{LD measure.}
 
@@ -35,7 +35,7 @@
   \item{quiet}{Print some intermediate results if \code{quiet=FALSE}.}
 }
 \details{
-  The power is for the test that disease is associated with a marker, given high risk allele frequency (\code{A}), disease prevalence, genotype relative risk (\code{Aa}), genotype relative risk (\code{AA}), LD measure (\code{D'} or \code{r^2}), marker allele frequency (\code{B}), number of cases, control:case ratio, and probability of the Type I error. The linear trend test (Cochran 1954; Armitage 1955) is used.
+  The power is for the test that disease is associated with a marker, given high risk allele frequency (\code{A}), disease prevalence, genotype relative risk (\code{Aa}), genotype relative risk (\code{AA}), LD measure (\code{\special{D'}} or \code{r^2}), marker allele frequency (\code{B}), number of cases, control:case ratio, and probability of the Type I error. The linear trend test (Cochran 1954; Armitage 1955) is used.
 }
 \value{
   \item{power}{The estimated power for the association test.}
@@ -44,7 +44,7 @@
 
   \item{mat.para}{A matrix of case-control parameters, including number of cases, number of controls, high risk allele frequency, prevalence, genotypic relative risk (\code{Aa}), genotypic relative risk (\code{AA}), genotypic risk for \code{aa} (baseline).}
 
-  \item{mat.B}{A matrix of marker locus \code{B} parameters, including marker allele frequency, linkage disequilibrium (\code{D'}), penetrance at marker genotype \code{bb}, penetrance at marker genotype \code{Bb}, penetrance at marker genotype \code{BB}, genotypic odds ratio \code{Bb}, genotypic odds ratio \code{BB}.}
+  \item{mat.B}{A matrix of marker locus \code{B} parameters, including marker allele frequency, linkage disequilibrium (\code{\special{D'}}), penetrance at marker genotype \code{bb}, penetrance at marker genotype \code{Bb}, penetrance at marker genotype \code{BB}, genotypic odds ratio \code{Bb}, genotypic odds ratio \code{BB}.}
 
   \item{mat.aFreq}{A 2 by 2 matrix of expected allele frequencies \code{Pr(B|D), Pr(b|D), Pr(B|non D), Pr(b|non D)}.}
 
