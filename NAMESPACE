@@ -1,5 +1,9 @@
-importFrom(gtools, binsearch)
 importFrom(gmodels, ci.binom)
+importFrom(graphics, abline, legend, locator, matplot, plot)
+importFrom(gtools, binsearch)
+importFrom(mvtnorm, rmvnorm)
+importFrom(stats, anova, lm, pchisq, pf, qchisq, qf)
+
 export(
        "gregorius",
        "power.casectrl",
