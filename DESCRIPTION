@@ -1,6 +1,6 @@
 Package: GeneticsDesign
 Title: Functions for designing genetics studies
-Version: 1.19.0
+Version: 1.19.1
 Date: 2010-04-15
 Author: Gregory Warnes <warnes@bst.rochester.edu>
 	David Duffy <davidD@qumr.edu.au>,	
@@ -12,4 +12,4 @@ Imports: gmodels, graphics, gtools (>= 2.4.0), mvtnorm, stats
 Description: This package contains functions useful for designing genetics
   studies, including power and sample-size calculations.
 biocViews: Genetics
-License: GPL
+License: GPL-2
