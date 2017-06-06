@@ -18,7 +18,8 @@
 # ratio -- Control: case ratio = nControl/nCase
 # alpha -- User-defined type I error rate
 GPC.default<-function(pA, pD, RRAa, RRAA, Dprime, pB, 
-                   nCase=500, ratio=1, alpha=0.05, quiet=FALSE)
+		   nCase=500, ratio=1, alpha=0.05, unselected=FALSE,
+		   quiet=FALSE)
 {
   if(!(pA>0 && pA<1))
     stop("Invalid value for pA, should fulfill 0<pA<1")
@@ -71,12 +72,25 @@ GPC.default<-function(pA, pD, RRAa, RRAA, Dprime, pB,
   PrBgDbar<-tmp[12]
   PrbgDbar<-tmp[13]
 
+  # If controls are unselected, we have to change some probabilities.
+  if(unselected) {
+	  PrBBgDbar<-pB*pB
+	  PrBbgDbar<-2*pB*(1-pB)
+	  PrbbgDbar<-(1-pB)*(1-pB)
+	  PrBgDbar<-pB
+	  PrbgDbar<-1-pB
+  }
+
+  # n0c, n1c, and n2c are the number of cases with bb, Bb, and BB genotypes
+  # respectively.
   n0c<-(nCase*PrbbgD)
   n1c<-(nCase*PrBbgD)
   n2c<-nCase-n0c-n1c
 
   nControl<-(nCase*ratio)
 
+  # n0n, n1n, and n2n are the number of controls with bb, Bb, and BB genotypes
+  # respectively. 
   n0n<-(nControl*PrbbgDbar)
   n1n<-(nControl*PrBbgDbar)
   n2n<-nControl-n0n-n1n
@@ -85,12 +99,18 @@ GPC.default<-function(pA, pD, RRAa, RRAA, Dprime, pB,
   nn.vec<-c(n2n, n1n, n0n)
 
   mat<-data.frame(case=nc.vec, control=nn.vec, code=c(2,1,0))
+  mat.counts<-data.frame(case=nc.vec, control=nn.vec)
+  colnames(mat.counts) = c("cases", "controls")
+  rownames(mat.counts) = c("0", "1", "2")
+
 
   x.vec<-c(2, 1, 0)
 
   R<-sum(nc.vec)
   S<-sum(nn.vec)
 
+  # It appears that these variables are not used anywhere after they are
+  # defined.
   n0<-n0c+n0n
   n1<-n1c+n1n
   n2<-n2c+n2n
@@ -178,7 +198,7 @@ GPC.default<-function(pA, pD, RRAa, RRAA, Dprime, pB,
  
   res<-list(power=power.vec[5], ncp=ncp,
             mat.para=mat.para, mat.B=mat.B, mat.aFreq=mat.aFreq,
-            mat.gFreq=mat.gFreq, mat.stat=mat.stat)
+            mat.gFreq=mat.gFreq, mat.stat=mat.stat, mat.counts=mat.counts)
 
   if(quiet==FALSE)
   {
@@ -199,7 +219,8 @@ GPC.default<-function(pA, pD, RRAa, RRAA, Dprime, pB,
 }
 
 GPC<-function(pA, pD, RRAa, RRAA, r2, pB, 
-                   nCase=500, ratio=1, alpha=0.05, quiet=FALSE)
+		   nCase=500, ratio=1, alpha=0.05, unselected=FALSE,
+		   quiet=FALSE)
 {
   if(!(pA>0 && pA<1))
     stop("Invalid value for pA, should fulfill 0<pA<1")
@@ -224,7 +245,7 @@ GPC<-function(pA, pD, RRAa, RRAA, r2, pB,
   Dprime<-Dprime.fun2(r2, pA, pB)
 
   res<-GPC.default(pA, pD, RRAa, RRAA, Dprime, pB, 
-                   nCase, ratio, alpha, quiet)
+                   nCase, ratio, alpha, unselected, quiet)
 
   invisible(res)
 }
