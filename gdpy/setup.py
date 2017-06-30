@@ -1,12 +1,6 @@
 import os
 from setuptools import setup
 
-try:
-    import pypandoc
-    long_description = pypandoc.convert('README.md', 'rst', format='md')
-except(IOError, ImportError):
-    long_description = open('README.md').read()
-
 setup(
     name = 'gdpy',
     packages=['gdpy'],
@@ -17,7 +11,6 @@ setup(
     license = 'MIT',
     keywords = ['genetics'],
     url = 'https://github.com/cdeboever3/GeneticsDesign',
-    long_description=long_description,
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Science/Research',
