@@ -78,6 +78,6 @@ def gpc_default_param_sweep(
             break
     columns=['allele_freq', 'odds_ratio', 'prevalence', 'num_cases',
              'num_controls', 'ratio', 'alpha', 'unselected', 'protective',
-             'power'])
+             'power']
     out = pd.DataFrame(results, columns=columns)
     return out
