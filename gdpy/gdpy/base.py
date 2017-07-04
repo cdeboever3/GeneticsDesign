@@ -1,10 +1,16 @@
 import itertools
+import os
 
 import pandas as pd
 import rpy2.robjects as robjects
 from rpy2.robjects import pandas2ri
 pandas2ri.activate()
 from rpy2.robjects import r
+
+# Source the GPC.R file.
+_gpc = os.path.realpath(os.path.join(os.path.split(__file__)[0],
+                                     '../../R/GPC.R'))
+r('source("{}")'.format(_gpc))
 
 def gpc_default(
     pA, 
