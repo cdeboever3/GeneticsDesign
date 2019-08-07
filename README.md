@@ -14,6 +14,6 @@ install_github("cdeboever3/GeneticsDesign")
 If you want to use the python wrapper, you'll need to first install the R
 package into whatever R your rpy2 uses, then run 
 ```
-cd cdpy
+cd gdpy
 python setup.py install
 ```
